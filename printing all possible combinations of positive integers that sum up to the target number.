@@ -1,0 +1,11 @@
+def find_sums(target, current_list, start_num):
+    if target == 0:
+        print(current_list)
+        return
+    if target < 0:
+        return
+    for i in range(start_num, target + 1):
+        current_list.append(i)
+        find_sums(target - i, current_list, i)
+        current_list.pop()
+find_sums(5,[] , 1)
